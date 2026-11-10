@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смерти</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.4s, color 0.4s; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #f1f1f1;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.4s;
+        }
+
+        body.dark-mode header {
+            background-color: #2a2a2a;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        body.dark-mode nav a {
+            color: #61a0ff;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: black;
+            font-size: clamp(30px, 8vw, 50px);
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: clamp(16px, 4vw, 20px);
+            line-height: 1.6;
+        }
+
+        .toggle-btn {
+            background-color: #333333;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            touch-action: manipulation; 
+        }
+
+        body.dark-mode .toggle-btn {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: #666;
+            transition: background-color 0.4s;
+        }
+
+        body.dark-mode footer {
+            background-color: #2a2a2a;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MyDevLog</div>
+        <!-- В теги 'a' мы прописываем ссылки на наши локальные файлы сайтов -->
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="projects.html">Пострадавшие</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Летальные исходы</h1>
+            <p>Пострадавшие:</p>
+            <p>Кирюха-200</p>
+            <p>Шпекит-200</p>
+            <p>Вован-200</p>
+            <p>Володя-200</p>
+            <p>Захар-300 пострадало только очко.</p>
+            <br>
+            <button class="toggle-btn" onclick="toggleTheme()">
+                <span id="themeIcon">🌙</span> <span id="themeText">Темная тема</span>
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2016 </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light theme';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark theme';
+            }
+        }
+    </script>
+
+</body>
+</html>

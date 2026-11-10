@@ -1,0 +1,5 @@
+h1 {color: tomato;font-size: 50px;}
+p {color: royalblue;font-size: 20px;}
+img { display: block; margin: 20px 0; border-radius: 10px; max-width: 100%;height: auto;}
+
+button { background-color: limegreen;   color: white;   font-size: 18px;  padding: 10px 20px;  border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;}
